@@ -20,7 +20,8 @@ services:
       - db
     ports:
       - 3000:3000
-
+    environment:
+      RAILS_ENV: production
   front:
     build: front/
     command: yarn run dev

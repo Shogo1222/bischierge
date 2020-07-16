@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: app_production
-  username: webapp
-  password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %>
+  database: app_development
+  username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
+  password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
